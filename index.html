@@ -28,12 +28,12 @@
             
             <ul class="menu">
                 <li><a href="about.html">About</a></li>
-                <li><a href="https://mailchi.mp/a410ec24b667/jackinjapan">Newsletter</a></li>
+                <li><a href="#" id="newsletter-popup">Newsletter</a></li>
                 <li><a href="https://mtw.org/missionaries/lyons-jack">Support</a></li>
                 <li><a href="media.html">Stickers</a></li>
             </ul>
 
-                <a href="https://www.facebook.com/jackyonswow/" target="_blank">
+                <a href="https://www.facebook.com/margaret.rodgers.574221" target="_blank">
                     <img src="https://cdn.simpleicons.org/facebook/white" alt="Facebook" width="24" height="24">
                 </a>
 
@@ -67,6 +67,29 @@
 
     </footer>
 
+    <!-- Newsletter popup form -->
+    <script>
+        // Load the form script only when needed and prevent auto-popup
+        let formScriptLoaded = false;
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const newsletterLink = document.getElementById('newsletter-popup');
+            if (newsletterLink) {
+                newsletterLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    if (!formScriptLoaded) {
+                        // Load the script dynamically
+                        const script = document.createElement('script');
+                        script.src = 'https://eocampaign1.com/form/de67bdde-c4c0-11f0-81fe-0506faef7c66.js';
+                        script.setAttribute('data-form', 'de67bdde-c4c0-11f0-81fe-0506faef7c66');
+                        document.body.appendChild(script);
+                        formScriptLoaded = true;
+                    }
+                });
+            }
+        });
+    </script>
 
 </body>
 </html>
