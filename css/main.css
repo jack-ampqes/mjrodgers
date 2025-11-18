@@ -14,7 +14,6 @@ body, h1, h2, h3, p, ul, li {
 }
 
 
-
   /* custom styling for specific icons */
   .fa-brands {
     color: #fff;
@@ -44,10 +43,10 @@ body {
     font-weight: 400;
     font-style: normal;
     font-size: 125%;
-    background-image: url('../images/bg.gif'); /* Relative path */
+    background-image: url('../images/bg.webp'); /* Relative path */
     background-size: cover;
     background-position: center;
-    background-color: #000000; /* Fallback background color */
+    background-color: #7CA28A; /* Fallback background color */
 }
 
 .container {
@@ -101,6 +100,19 @@ nav {
 /* Add margin to the right of link icons */
 .menu li a i {
     margin-right: 10px; /* Adjust as needed */
+}
+
+/* Social media icon links */
+nav > a {
+    text-decoration: none;
+    border: none;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+nav > a img {
+    display: block;
+    border: none;
 }
 
 
