@@ -8,3 +8,4 @@ github_deploy_key.pub
 
 # macOS metadata files
 ._*
+.DS_Store
