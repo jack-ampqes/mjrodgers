@@ -5,3 +5,6 @@ github_deploy_key.pub
 
 # macOS metadata for keys
 ._github_deploy_key*
+
+# macOS metadata files
+._*
