@@ -11,32 +11,10 @@ body, h1, h2, h3, p, ul, li {
 }
 
 /* CUSTOM FONTS */
-.micro-5-regular {
-    font-family: "Micro 5", sans-serif;
-    font-weight: 400;
+.inter-tight {
+    font-family: "Inter Tight", sans-serif;
+    font-optical-sizing: auto;
     font-style: normal;
-}
-
-.press-start-2p-regular {
-    font-family: "Press Start 2P", system-ui;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.neuton-regular {
-    font-family: "Neuton", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Zelda';
-    src: url('fonts/zelda.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'ITCBen';
-    src: url('fonts/ITCBen.ttf') format('truetype');
 }
 
 
@@ -64,7 +42,8 @@ html, body {
 }
 
 body {
-    font-family: 'ITCBen', serif;
+    font-family: "Inter Tight", sans-serif;
+    font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
     font-size: 125%;
@@ -86,7 +65,8 @@ body {
 
 /* Apply styles to the paragraph */
 p {
-    font-family: "Oxanium", sans-serif;
+    font-family: "Inter Tight", sans-serif;
+    font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
     font-size: 28px; /* Set font size */
