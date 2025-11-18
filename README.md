@@ -1,1 +1,2 @@
-hey! testing out my website @ https://www.jacktojapan.com
+# mjrodgers
+Margaret Rodgers - Missionary to Nagoya, Japan.
