@@ -102,6 +102,11 @@ nav {
     margin-right: 10px; /* Adjust as needed */
 }
 
+/* Align icon images vertically with text */
+.menu li a img {
+    vertical-align: middle;
+}
+
 /* Social media icon links */
 nav > a {
     text-decoration: none;
