@@ -32,7 +32,7 @@
                 <li><a href="https://mtw.org/missionaries/lyons-jack">Support</a></li>
                 <li><a href="media.html">Stickers</a></li>
                 <li>
-                    <a href="https://line.me/ti/p/ZgFtQKNHsa" target="_blank">
+                    <a href="#" id="line-qr-popup">
                         <img src="https://cdn.simpleicons.org/line/white" alt="Line" width="24" height="24">
                     </a>
                 </li>
@@ -55,24 +55,59 @@
 
     </footer>
 
-    <!-- Newsletter popup form -->
+    <!-- LINE QR Code Modal -->
+    <div id="line-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img src="images/LINEQR.webp" alt="LINE QR Code">
+        </div>
+    </div>
+
+    <!-- Newsletter popup form - preloaded -->
+    <script async src="https://eocampaign1.com/form/de67bdde-c4c0-11f0-81fe-0506faef7c66.js" data-form="de67bdde-c4c0-11f0-81fe-0506faef7c66"></script>
+    
     <script>
-        // Load the form script only when needed and prevent auto-popup
-        let formScriptLoaded = false;
-        
         document.addEventListener('DOMContentLoaded', function() {
+            // Hide the form initially if it auto-shows
+            setTimeout(function() {
+                const eoForm = document.querySelector('[data-form="de67bdde-c4c0-11f0-81fe-0506faef7c66"]');
+                if (eoForm && eoForm.style.display !== 'none') {
+                    eoForm.style.display = 'none';
+                }
+            }, 100);
+
+            // Newsletter click handler
             const newsletterLink = document.getElementById('newsletter-popup');
             if (newsletterLink) {
                 newsletterLink.addEventListener('click', function(e) {
                     e.preventDefault();
-                    
-                    if (!formScriptLoaded) {
-                        // Load the script dynamically
-                        const script = document.createElement('script');
-                        script.src = 'https://eocampaign1.com/form/de67bdde-c4c0-11f0-81fe-0506faef7c66.js';
-                        script.setAttribute('data-form', 'de67bdde-c4c0-11f0-81fe-0506faef7c66');
-                        document.body.appendChild(script);
-                        formScriptLoaded = true;
+                    // Try to trigger the form
+                    const eoForm = document.querySelector('[data-form="de67bdde-c4c0-11f0-81fe-0506faef7c66"]');
+                    if (eoForm) {
+                        eoForm.style.display = 'block';
+                    }
+                });
+            }
+
+            // LINE QR Code popup
+            const lineLink = document.getElementById('line-qr-popup');
+            const lineModal = document.getElementById('line-modal');
+            const closeModal = document.querySelector('.close-modal');
+
+            if (lineLink && lineModal) {
+                lineLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    lineModal.style.display = 'block';
+                });
+
+                closeModal.addEventListener('click', function() {
+                    lineModal.style.display = 'none';
+                });
+
+                // Close modal when clicking outside of it
+                window.addEventListener('click', function(e) {
+                    if (e.target === lineModal) {
+                        lineModal.style.display = 'none';
                     }
                 });
             }
