@@ -88,6 +88,7 @@ body {
     gap: 30px;
     margin-top: 30px;
     padding: 20px 0;
+    justify-items: center;
 }
 
 /* Ensure Shopify products are responsive */
@@ -95,6 +96,8 @@ body {
     width: 100%;
     max-width: 100%;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 /* Mobile Responsive Styles */
@@ -105,15 +108,27 @@ body {
 
     .content-wrapper {
         padding: 15px;
-        margin: 10px;
+        margin: 10px auto;
         max-width: calc(100% - 20px);
+        width: calc(100% - 20px);
+        box-sizing: border-box;
     }
 
     .products-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 25px;
         margin-top: 20px;
-        padding: 10px 0;
+        padding: 15px 0;
+        justify-items: center;
+        width: 100%;
+    }
+
+    .products-grid > div {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     p {
@@ -141,8 +156,10 @@ body {
 
 @media (max-width: 600px) {
     .content-wrapper {
-        padding: 10px;
-        margin: 5px;
+        padding: 15px;
+        margin: 10px auto;
+        width: calc(100% - 20px);
+        box-sizing: border-box;
     }
 
     p {
@@ -151,18 +168,27 @@ body {
     }
 
     .products-grid {
-        gap: 15px;
+        gap: 20px;
+        padding: 10px 0;
     }
 
-    /* Ensure Shopify products fit on mobile */
+    /* Ensure Shopify products fit on mobile and are centered */
     .products-grid [class*="shopify-buy"] {
         max-width: 100%;
         width: 100%;
+        margin: 0 auto;
     }
 
     .products-grid [class*="shopify-buy__product"] {
         max-width: 100% !important;
         width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .products-grid [class*="shopify-buy__product__wrapper"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
     }
 }
 
@@ -176,6 +202,22 @@ body {
 .products-grid [class*="shopify-buy__product__price"],
 .products-grid [class*="shopify-buy__product__price"] span {
     color: #ffffff !important;
+}
+
+/* Center Shopify product components */
+.products-grid [class*="shopify-buy__layout"] {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .products-grid [class*="shopify-buy__layout"] {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
 }
 
 /* Apply styles to the paragraph */
