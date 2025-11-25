@@ -23,17 +23,22 @@
 <body>
     <header>
         <div class="logo">
-        <a href="index.html">
-            <img src="images/piclogo.png" alt="Logo">
-        </a>
+            <img src="images/logomain.svg" alt="Logo">
         </div>
         <nav>
+            
             <ul class="menu">
                 <li><a href="about.html">About</a></li>
-                <li><a href="https://mailchi.mp/a410ec24b667/jackinjapan">Newsletter</a></li>
-                <li><a href="https://mtw.org/missionaries/lyons-jack">Support</a></li>
-                <li><a href="media.html">Stickers</a></li>
+                <li><a data-eo-form-toggle-id="de67bdde-c4c0-11f0-81fe-0506faef7c66" href="#">Newsletter</a></li>
+                <li><a href="https://mtw.org/missionaries/details/margaret-rodgers/">Support</a></li>
+                <li><a href="stickers.html">Stickers</a></li>
+                <li>
+                    <a href="#" id="line-qr-popup">
+                        <img src="https://cdn.simpleicons.org/line/white" alt="Line" width="24" height="24">
+                    </a>
+                </li>
             </ul>
+                
         </nav>
     </header>
 
@@ -95,6 +100,46 @@
     <footer>
         <!-- Footer content goes here -->
     </footer>
-</div>
+
+    <!-- LINE QR Code Modal -->
+    <div id="line-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img src="images/LINEQR.jpg" alt="LINE QR Code">
+        </div>
+    </div>
+
+    <!-- EmailOctopus Form Script -->
+    <script async src="https://eocampaign1.com/form/de67bdde-c4c0-11f0-81fe-0506faef7c66.js" data-form="de67bdde-c4c0-11f0-81fe-0506faef7c66"></script>
+
+    <script>
+        // LINE QR Code popup
+        document.addEventListener('DOMContentLoaded', function() {
+            const lineLink = document.getElementById('line-qr-popup');
+            const lineModal = document.getElementById('line-modal');
+            const closeModal = document.querySelector('.close-modal');
+
+            if (lineLink && lineModal) {
+                lineLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    lineModal.style.display = 'block';
+                });
+
+                if (closeModal) {
+                    closeModal.addEventListener('click', function() {
+                        lineModal.style.display = 'none';
+                    });
+                }
+
+                // Close modal when clicking outside of it
+                window.addEventListener('click', function(e) {
+                    if (e.target === lineModal) {
+                        lineModal.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+
 </body>
 </html>
