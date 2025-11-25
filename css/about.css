@@ -47,7 +47,7 @@ body {
     font-weight: 400;
     font-style: normal;
     font-size: 125%;
-    background-image: url('../images/bg.gif'); /* Relative path */
+    background-image: url('../images/bg.webp'); /* Relative path */
     background-size: cover;
     background-position: center;
     margin: 0;
@@ -56,27 +56,57 @@ body {
 
 /* Add a class for the content wrapper */
 .content-wrapper {
-    background-color: white; /* Set background color to white */
+    background-color: rgba(223, 223, 223, 0.3); /* Semi-transparent white for glass effect */
+    backdrop-filter: blur(10px); /* Blur effect for glass morphism */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
     padding: 20px; /* Add padding for spacing */
     margin: 20px auto; /* Center the block horizontally and add margin */
-    max-width: 800px; /* Set maximum width */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
+    max-width: 800px; /* Reduced from 800px for tighter horizontal squeeze */
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37); /* Enhanced shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Subtle border for glass effect */
+    border-radius: 10px; /* Rounded corners */
 }
 
 /* Apply styles to the paragraph */
 p {
+    max-width: 600px; /* Reduced from 800px for tighter horizontal squeeze */
+    margin: 1.5em auto; /* Center the paragraph horizontally with spacing */
     font-family: "Inter Tight", sans-serif;
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
     font-size: 28px; /* Set font size */
-    color: #000; /* Set text color */
-    line-height: 1.2; /* Set line height for better readability */
-    text-indent: 10%;
+    color: #fff; /* Set text color */
+    line-height: 1.1; /* Set line height for better readability */
+    text-align: center; /* Center all text */
+}
+
+/* Quote/verse styling */
+p.quote {
+    letter-spacing: 0.06em;
+    font-size: 22px;
+font-weight: 200;
+}
+
+p.bold {
+    font-weight: bold;
+}
+
+/* Image container */
+.image-container {
+    text-align: center;
+    margin: 1.5em 0;
+}
+
+.content-wrapper img {
+    max-width: 85%;
+    height: auto;
+    border-radius: 10px; /* Rounded corners for all images */
 }
 
 .highlight {
-    color: #C87270; /* Or any other color you desire */
+    font-weight: 500;
+    color: #ffffff; /* Or any other color you desire */
 }
 
 /* Adjust container width */
@@ -133,6 +163,17 @@ nav {
 
 /* About page specific styles */
 .about-text {
-    text-align: justify; /* Justify the text */
-    color: #C87270; /* Set text color */
+    text-align: center; /* Center the text */
+    color: #6e8777; /* Set text color */
 }
+
+/* Headings */
+h1, h2, h3 {
+    font-family: "Berkshire Swash", cursive;
+    text-align: center;
+    color: #fff; /* Set text color */
+    font-size: 65px; /* Set font size */
+    margin: .8em 0; /* Add spacing around headings */
+    letter-spacing: -0.01em;
+}
+

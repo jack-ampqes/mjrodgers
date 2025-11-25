@@ -28,9 +28,9 @@
             
             <ul class="menu">
                 <li><a href="about.html">About</a></li>
-                <li><a href="#" id="newsletter-popup">Newsletter</a></li>
-                <li><a href="https://mtw.org/missionaries/lyons-jack">Support</a></li>
-                <li><a href="media.html">Stickers</a></li>
+                <li><a data-eo-form-toggle-id="de67bdde-c4c0-11f0-81fe-0506faef7c66" href="#">Newsletter</a></li>
+                <li><a href="https://mtw.org/missionaries/details/margaret-rodgers/">Support</a></li>
+                <li><a href="stickers.html">Stickers</a></li>
                 <li>
                     <a href="#" id="line-qr-popup">
                         <img src="https://cdn.simpleicons.org/line/white" alt="Line" width="24" height="24">
@@ -59,106 +59,40 @@
     <div id="line-modal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
-            <img src="images/LINEQR.webp" alt="LINE QR Code">
+            <img src="images/LINEQR.jpg" alt="LINE QR Code">
         </div>
     </div>
 
-    <!-- Newsletter popup form -->
+    <!-- EmailOctopus Form Script -->
+    <script async src="https://eocampaign1.com/form/de67bdde-c4c0-11f0-81fe-0506faef7c66.js" data-form="de67bdde-c4c0-11f0-81fe-0506faef7c66"></script>
+
     <script>
-        // Prevent EmailOctopus auto-popup by intercepting setTimeout/setInterval
-        (function() {
-            const originalSetTimeout = window.setTimeout;
-            const originalSetInterval = window.setInterval;
-            let allowPopup = false;
-            
-            window.setTimeout = function(fn, delay) {
-                if (allowPopup || delay < 1000) {
-                    return originalSetTimeout.apply(this, arguments);
-                }
-                // Block long delays (likely auto-popup timers)
-                return originalSetTimeout(function() {}, 0);
-            };
-            
-            window.setInterval = function(fn, delay) {
-                if (allowPopup || delay < 1000) {
-                    return originalSetInterval.apply(this, arguments);
-                }
-                return originalSetInterval(function() {}, 0);
-            };
-            
-            // Load EmailOctopus script
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://eocampaign1.com/form/de67bdde-c4c0-11f0-81fe-0506faef7c66.js';
-            script.setAttribute('data-form', 'de67bdde-c4c0-11f0-81fe-0506faef7c66');
-            document.body.appendChild(script);
-            
-            document.addEventListener('DOMContentLoaded', function() {
-                const newsletterLink = document.getElementById('newsletter-popup');
-                if (newsletterLink) {
-                    newsletterLink.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        allowPopup = true;
-                        
-                        // Function to trigger the form popup
-                        function showForm() {
-                            // Try multiple methods to trigger EmailOctopus form
-                            if (window.EmailOctopusForm && window.EmailOctopusForm.show) {
-                                window.EmailOctopusForm.show('de67bdde-c4c0-11f0-81fe-0506faef7c66');
-                            } else if (window.EO && window.EO.showForm) {
-                                window.EO.showForm('de67bdde-c4c0-11f0-81fe-0506faef7c66');
-                            } else {
-                                // Look for EmailOctopus form elements
-                                const formContainer = document.querySelector('[data-emailoctopus-form-id="de67bdde-c4c0-11f0-81fe-0506faef7c66"]');
-                                const formIframe = document.querySelector('iframe[src*="emailoctopus"]');
-                                const formDiv = document.querySelector('.emailoctopus-form-popup');
-                                
-                                if (formContainer) {
-                                    formContainer.style.display = 'block';
-                                    formContainer.style.visibility = 'visible';
-                                    formContainer.style.opacity = '1';
-                                } else if (formIframe) {
-                                    formIframe.style.display = 'block';
-                                    formIframe.style.visibility = 'visible';
-                                } else if (formDiv) {
-                                    formDiv.style.display = 'block';
-                                    formDiv.style.visibility = 'visible';
-                                } else {
-                                    // Wait a bit and try again if script is still loading
-                                    setTimeout(showForm, 100);
-                                }
-                            }
-                        }
-                        
-                        // Trigger immediately
-                        showForm();
-                    });
-                }
+        // LINE QR Code popup
+        document.addEventListener('DOMContentLoaded', function() {
+            const lineLink = document.getElementById('line-qr-popup');
+            const lineModal = document.getElementById('line-modal');
+            const closeModal = document.querySelector('.close-modal');
 
-                // LINE QR Code popup
-                const lineLink = document.getElementById('line-qr-popup');
-                const lineModal = document.getElementById('line-modal');
-                const closeModal = document.querySelector('.close-modal');
+            if (lineLink && lineModal) {
+                lineLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    lineModal.style.display = 'block';
+                });
 
-                if (lineLink && lineModal) {
-                    lineLink.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        lineModal.style.display = 'block';
-                    });
-
+                if (closeModal) {
                     closeModal.addEventListener('click', function() {
                         lineModal.style.display = 'none';
                     });
-
-                    // Close modal when clicking outside of it
-                    window.addEventListener('click', function(e) {
-                        if (e.target === lineModal) {
-                            lineModal.style.display = 'none';
-                        }
-                    });
                 }
-            });
-        })();
+
+                // Close modal when clicking outside of it
+                window.addEventListener('click', function(e) {
+                    if (e.target === lineModal) {
+                        lineModal.style.display = 'none';
+                    }
+                });
+            }
+        });
     </script>
 
 </body>
