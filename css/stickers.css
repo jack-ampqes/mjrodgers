@@ -90,10 +90,79 @@ body {
     padding: 20px 0;
 }
 
-@media (max-width: 600px) {
+/* Ensure Shopify products are responsive */
+.products-grid > div {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        font-size: 100%;
+    }
+
+    .content-wrapper {
+        padding: 15px;
+        margin: 10px;
+        max-width: calc(100% - 20px);
+    }
+
     .products-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+        margin-top: 20px;
+        padding: 10px 0;
+    }
+
+    p {
+        font-size: 18px;
+        padding: 0 10px;
+        text-indent: 0;
+    }
+
+    .logo img {
+        max-width: 30%;
+        padding-top: 2%;
+    }
+
+    .menu li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .menu li a {
+        display: block;
+        padding: 5px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .content-wrapper {
+        padding: 10px;
+        margin: 5px;
+    }
+
+    p {
+        font-size: 16px;
+        padding: 0 5px;
+    }
+
+    .products-grid {
+        gap: 15px;
+    }
+
+    /* Ensure Shopify products fit on mobile */
+    .products-grid [class*="shopify-buy"] {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .products-grid [class*="shopify-buy__product"] {
+        max-width: 100% !important;
+        width: 100% !important;
     }
 }
 
