@@ -137,6 +137,12 @@ body {
         text-indent: 0;
     }
 
+    .white-text {
+        text-align: center;
+        margin: 1.5em auto;
+        display: block;
+    }
+
     .logo img {
         max-width: 30%;
         padding-top: 2%;
@@ -165,6 +171,12 @@ body {
     p {
         font-size: 16px;
         padding: 0 5px;
+    }
+
+    .white-text {
+        text-align: center;
+        margin: 1.5em auto;
+        display: block;
     }
 
     .products-grid {
