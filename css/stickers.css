@@ -21,6 +21,10 @@ body, h1, h2, h3, p, ul, li {
 /* general classes */
 .white-text {
     color: white;
+    text-align: center !important;
+    text-indent: 0 !important;
+    margin: 1.5em auto;
+    display: block;
 }
 
 /* Apply styles to the paragraph */
